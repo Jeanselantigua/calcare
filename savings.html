@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Savings &amp; Assistance — CalCare</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function () {
+      const t = localStorage.getItem("calcare-theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">Cal<span>Care</span></a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="compare.html">Compare</a>
+        <a href="savings.html" aria-current="page">Savings &amp; Assistance</a>
+        <a href="market.html">Market</a>
+        <a href="faq.html">FAQ &amp; Contact</a>
+        <a href="team.html">Team</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-intro">
+      <h1>Savings &amp; assistance</h1>
+      <p>Tax tools and local programs that can lower what you pay. CalCare estimates are educational—confirm details with a tax professional or agency.</p>
+    </header>
+
+    <section class="section section--narrow">
+      <h2>Dependent Care FSA</h2>
+      <p class="lede">Set aside up to $5,000 pre-tax per year ($2,500 if married filing separately) for eligible childcare if your employer offers an FSA. Our calculator estimates savings using a simplified marginal rate from your income range.</p>
+    </section>
+
+    <section class="section section--narrow">
+      <h2>Child &amp; Dependent Care Tax Credit</h2>
+      <p class="lede">A credit on a percentage of eligible expenses—up to $3,000 for one child or $6,000 for two or more. The percentage depends on income. FSA contributions and the credit interact; the calculator models a simple non-double-counting estimate.</p>
+    </section>
+
+    <section class="section">
+      <h2>Programs &amp; partners</h2>
+      <p class="lede">Start here for subsidies, referrals, and local support. Potential CalCare partners include FIRST 5 Santa Clara County and Choices for Children.</p>
+      <div class="partner-list">
+        <article class="partner">
+          <h3>Child Care Aware of America</h3>
+          <p>National resource for finding care and understanding costs. <a href="https://www.childcareaware.org/" rel="noopener noreferrer" target="_blank">Visit Child Care Aware</a></p>
+        </article>
+        <article class="partner">
+          <h3>ChildCare.gov</h3>
+          <p>Federal gateway to state and local childcare resources. <a href="https://childcare.gov/" rel="noopener noreferrer" target="_blank">Visit ChildCare.gov</a></p>
+        </article>
+        <article class="partner">
+          <h3>FIRST 5 Santa Clara County</h3>
+          <p>Early childhood investments and family supports in Santa Clara County. <a href="https://www.first5kids.org/" rel="noopener noreferrer" target="_blank">Visit FIRST 5</a></p>
+        </article>
+        <article class="partner">
+          <h3>Choices for Children</h3>
+          <p>Childcare referrals and family resources. <a href="https://www.choicesforchildren.org/" rel="noopener noreferrer" target="_blank">Visit Choices for Children</a></p>
+        </article>
+      </div>
+      <p style="margin-top:2rem"><a class="btn btn--primary" href="calculator.html">Estimate tax savings</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Partner facility listings</h2>
+      <p class="lede">Illustrative partner-style listings. Not a live inventory—labeled as samples.</p>
+      <ul class="provider-list">
+        <li>
+          <h3>Sunshine Learning Center</h3>
+          <p>Sample partner facility · infant–preschool · estimate labels apply · Santa Clara area</p>
+        </li>
+        <li>
+          <h3>Casa Amiga Family Daycare</h3>
+          <p>Sample home-based partner · flexible hours · estimate labels apply</p>
+        </li>
+        <li>
+          <h3>AfterSchool Hub</h3>
+          <p>Sample school-age program · part-time friendly · estimate labels apply</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© CalCare. Estimates only—not tax, legal, or financial advice.</p>
+    <p><a href="faq.html">Contact</a></p>
+  </footer>
+
+  <div class="chatbot">
+    <div class="chatbot__panel" id="chat-panel" role="dialog" aria-label="CalCare help chat">
+      <div class="chatbot__header">
+        <strong>Ask CalCare</strong>
+        <button type="button" class="icon-btn" id="chat-close" aria-label="Close chat">Close</button>
+      </div>
+      <div class="chatbot__messages" id="chat-messages"></div>
+      <form class="chatbot__form" id="chat-form">
+        <label class="sr-only" for="chat-input">Your question</label>
+        <input id="chat-input" name="q" autocomplete="off" placeholder="Ask about FSA or assistance" />
+        <button class="btn btn--primary" type="submit">Send</button>
+      </form>
+    </div>
+    <button type="button" class="chatbot__toggle" id="chat-toggle" aria-expanded="false" aria-controls="chat-panel">Chat</button>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

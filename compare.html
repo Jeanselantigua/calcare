@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Compare care types — CalCare</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function () {
+      const t = localStorage.getItem("calcare-theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">Cal<span>Care</span></a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="compare.html" aria-current="page">Compare</a>
+        <a href="savings.html">Savings &amp; Assistance</a>
+        <a href="market.html">Market</a>
+        <a href="faq.html">FAQ &amp; Contact</a>
+        <a href="team.html">Team</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-intro">
+      <p class="estimate-label">Estimates only</p>
+      <h1>Compare care types</h1>
+      <p>See center, home daycare, nanny, au pair, and babysitter/after-school estimates side by side for one child.</p>
+    </header>
+
+    <form class="form-panel" id="compare-form" style="max-width:36rem;margin-block-end:2rem">
+      <div class="field-row">
+        <div class="field">
+          <label for="zip">ZIP code</label>
+          <input id="zip" name="zip" inputmode="numeric" placeholder="95112" required />
+        </div>
+        <div class="field">
+          <label for="age">Age band</label>
+          <select id="age" name="age">
+            <option value="infant">Infant (0–12 mo)</option>
+            <option value="toddler">Toddler (1–2)</option>
+            <option value="preschool" selected>Preschool (3–5)</option>
+            <option value="school">School age (6–12)</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="income">Household income range</label>
+          <select id="income" name="income">
+            <option value="under40">Under $40,000</option>
+            <option value="40-70">$40,000–$70,000</option>
+            <option value="70-100" selected>$70,000–$100,000</option>
+            <option value="100-150">$100,000–$150,000</option>
+            <option value="150-200">$150,000–$200,000</option>
+            <option value="over200">Over $200,000</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="schedule">Schedule</label>
+          <select id="schedule" name="schedule">
+            <option value="full">Full-time</option>
+            <option value="part">Part-time</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="hours">Weekly hours</label>
+        <input id="hours" name="hours" type="number" min="5" max="60" value="40" />
+      </div>
+      <button class="btn btn--primary" type="submit">Compare estimates</button>
+    </form>
+
+    <section id="compare-out" aria-live="polite">
+      <p class="empty-state">Choose a ZIP and age band to generate the comparison table.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© CalCare. Estimates only—not tax, legal, or financial advice.</p>
+    <p><a href="calculator.html">Full calculator</a></p>
+  </footer>
+
+  <div class="chatbot">
+    <div class="chatbot__panel" id="chat-panel" role="dialog" aria-label="CalCare help chat">
+      <div class="chatbot__header">
+        <strong>Ask CalCare</strong>
+        <button type="button" class="icon-btn" id="chat-close" aria-label="Close chat">Close</button>
+      </div>
+      <div class="chatbot__messages" id="chat-messages"></div>
+      <form class="chatbot__form" id="chat-form">
+        <label class="sr-only" for="chat-input">Your question</label>
+        <input id="chat-input" name="q" autocomplete="off" placeholder="Ask about care types" />
+        <button class="btn btn--primary" type="submit">Send</button>
+      </form>
+    </div>
+    <button type="button" class="chatbot__toggle" id="chat-toggle" aria-expanded="false" aria-controls="chat-panel">Chat</button>
+  </div>
+
+  <script src="js/calculator.js"></script>
+  <script src="js/compare.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

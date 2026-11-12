@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Team — CalCare</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function () {
+      const t = localStorage.getItem("calcare-theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">Cal<span>Care</span></a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="compare.html">Compare</a>
+        <a href="savings.html">Savings &amp; Assistance</a>
+        <a href="market.html">Market</a>
+        <a href="faq.html">FAQ &amp; Contact</a>
+        <a href="team.html" aria-current="page">Team</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-intro">
+      <h1>Team</h1>
+      <p>Parents and builders focused on making childcare costs understandable before families choose care.</p>
+    </header>
+
+    <section class="section">
+      <div class="team-grid">
+        <article class="team-member">
+          <div class="avatar" aria-hidden="true">LA</div>
+          <h3>Lindsay Chavez Agraz</h3>
+          <p class="role">CEO</p>
+          <p>Leads CalCare’s mission to give working parents clear cost estimates before they choose care.</p>
+        </article>
+        <article class="team-member">
+          <div class="avatar" aria-hidden="true">MV</div>
+          <h3>Marylene Montoya Villalpando</h3>
+          <p class="role">CFO</p>
+          <p>Owns the financial model that keeps the basic calculator free while partnerships sustain the work.</p>
+        </article>
+        <article class="team-member">
+          <div class="avatar" aria-hidden="true">MV</div>
+          <h3>Marisol Villegas</h3>
+          <p class="role">Product</p>
+          <p>Designs the estimate experience for real schedules—full-time, part-time, and everything in between.</p>
+        </article>
+        <article class="team-member">
+          <div class="avatar" aria-hidden="true">AS</div>
+          <h3>Arlana Soriano</h3>
+          <p class="role">CMO</p>
+          <p>Connects families and partner providers with honest, estimate-labeled messaging.</p>
+        </article>
+        <article class="team-member">
+          <div class="avatar" aria-hidden="true">LB</div>
+          <h3>Lizzie Barrera</h3>
+          <p class="role">COO</p>
+          <p>Keeps operations tight so CalCare stays simple, trustworthy, and available.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--narrow">
+      <h2>How we stay free</h2>
+      <p class="lede">No subscriptions. Revenue comes from provider partnerships, donations, and possibly ads—never a lock on the core calculator.</p>
+      <p><a class="btn btn--secondary" href="faq.html">Contact the team</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© CalCare. Estimates only—not tax, legal, or financial advice.</p>
+    <p><a href="index.html">Home</a></p>
+  </footer>
+
+  <div class="chatbot">
+    <div class="chatbot__panel" id="chat-panel" role="dialog" aria-label="CalCare help chat">
+      <div class="chatbot__header">
+        <strong>Ask CalCare</strong>
+        <button type="button" class="icon-btn" id="chat-close" aria-label="Close chat">Close</button>
+      </div>
+      <div class="chatbot__messages" id="chat-messages"></div>
+      <form class="chatbot__form" id="chat-form">
+        <label class="sr-only" for="chat-input">Your question</label>
+        <input id="chat-input" name="q" autocomplete="off" placeholder="Ask CalCare" />
+        <button class="btn btn--primary" type="submit">Send</button>
+      </form>
+    </div>
+    <button type="button" class="chatbot__toggle" id="chat-toggle" aria-expanded="false" aria-controls="chat-panel">Chat</button>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

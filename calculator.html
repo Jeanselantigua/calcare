@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Calculator — CalCare</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function () {
+      const t = localStorage.getItem("calcare-theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">Cal<span>Care</span></a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="calculator.html" aria-current="page">Calculator</a>
+        <a href="compare.html">Compare</a>
+        <a href="savings.html">Savings &amp; Assistance</a>
+        <a href="market.html">Market</a>
+        <a href="faq.html">FAQ &amp; Contact</a>
+        <a href="team.html">Team</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-intro">
+      <p class="estimate-label">Estimates only</p>
+      <h1>Childcare cost calculator</h1>
+      <p>Enter your ZIP, children, income range, and care details. Results include fees, tax savings, affordability, multi-year projection, care-type comparison, and sample local providers.</p>
+    </header>
+
+    <div class="calc-layout">
+      <form class="form-panel" id="calc-form" novalidate>
+        <div class="field">
+          <label for="zip">ZIP code</label>
+          <input id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" placeholder="95112" required />
+          <p class="hint" id="zip-error"></p>
+        </div>
+
+        <div class="field">
+          <span class="field-label" id="children-label">Children</span>
+          <p class="hint">Add each child and pick an age band.</p>
+          <div class="child-rows" id="children-rows" aria-labelledby="children-label"></div>
+          <button type="button" class="btn btn--secondary" id="add-child">Add child</button>
+        </div>
+
+        <div class="field">
+          <label for="income">Household income range</label>
+          <select id="income" name="income" required>
+            <option value="under40">Under $40,000</option>
+            <option value="40-70">$40,000–$70,000</option>
+            <option value="70-100" selected>$70,000–$100,000</option>
+            <option value="100-150">$100,000–$150,000</option>
+            <option value="150-200">$150,000–$200,000</option>
+            <option value="over200">Over $200,000</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="careType">Care type</label>
+          <select id="careType" name="careType" required>
+            <option value="center">Childcare center</option>
+            <option value="home">Home daycare</option>
+            <option value="nanny">In-home nanny</option>
+            <option value="aupair">Au pair</option>
+            <option value="sitter">Babysitter / after-school</option>
+          </select>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="schedule">Schedule</label>
+            <select id="schedule" name="schedule">
+              <option value="full">Full-time</option>
+              <option value="part">Part-time</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="hours">Weekly hours</label>
+            <input id="hours" name="hours" type="number" min="5" max="60" value="40" />
+            <p class="hint">Part-time scales from a 40-hour full-time baseline.</p>
+          </div>
+        </div>
+
+        <p class="hint">Incidental fees and food are included at $150 per child per year.</p>
+        <button class="btn btn--primary" type="submit">Calculate estimate</button>
+        <p class="privacy-note">Privacy: inputs stay in your browser for this estimate. We only ask for what we need to model cost.</p>
+      </form>
+
+      <section class="results-panel" tabindex="-1">
+        <div class="segmented" role="group" aria-label="Cost period" style="margin-block-end:1rem">
+          <button type="button" data-period="monthly" aria-pressed="true">Monthly</button>
+          <button type="button" data-period="annual" aria-pressed="false">Annual</button>
+        </div>
+        <div id="calc-results" aria-live="polite">
+          <p class="estimate-label">Ready when you are</p>
+          <h2>Your results</h2>
+          <p class="empty-state">Submit the form to see monthly/annual costs, tax savings, HHS affordability, projections, comparisons, and sample providers.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© CalCare. Estimates only—not tax, legal, or financial advice.</p>
+    <p><a href="faq.html">Privacy note</a> · <a href="savings.html">Assistance</a></p>
+  </footer>
+
+  <div class="chatbot">
+    <div class="chatbot__panel" id="chat-panel" role="dialog" aria-label="CalCare help chat">
+      <div class="chatbot__header">
+        <strong>Ask CalCare</strong>
+        <button type="button" class="icon-btn" id="chat-close" aria-label="Close chat">Close</button>
+      </div>
+      <div class="chatbot__messages" id="chat-messages"></div>
+      <form class="chatbot__form" id="chat-form">
+        <label class="sr-only" for="chat-input">Your question</label>
+        <input id="chat-input" name="q" autocomplete="off" placeholder="Ask about costs or tax savings" />
+        <button class="btn btn--primary" type="submit">Send</button>
+      </form>
+    </div>
+    <button type="button" class="chatbot__toggle" id="chat-toggle" aria-expanded="false" aria-controls="chat-panel">Chat</button>
+  </div>
+
+  <script src="js/calculator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

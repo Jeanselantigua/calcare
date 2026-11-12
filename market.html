@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Market — CalCare</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function () {
+      const t = localStorage.getItem("calcare-theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">Cal<span>Care</span></a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="compare.html">Compare</a>
+        <a href="savings.html">Savings &amp; Assistance</a>
+        <a href="market.html" aria-current="page">Market</a>
+        <a href="faq.html">FAQ &amp; Contact</a>
+        <a href="team.html">Team</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-intro">
+      <h1>Childcare market snapshot</h1>
+      <p>National context for why estimates matter—prices and the market have grown quickly.</p>
+    </header>
+
+    <section class="section">
+      <h2>What families are paying</h2>
+      <div class="stat-stack">
+        <article class="stat-block">
+          <h3>$13,184</h3>
+          <p>Average yearly price per child in 2025 — up 23% since 2021 (Child Care Aware of America).</p>
+        </article>
+        <article class="stat-block">
+          <h3>$1,083</h3>
+          <p>Median monthly childcare cost reported by the Federal Reserve.</p>
+        </article>
+        <article class="stat-block">
+          <h3>$69.07B → $110.34B</h3>
+          <p>U.S. childcare market in 2025 projected to 2031 (Mordor Intelligence).</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--narrow">
+      <h2>Why CalCare exists</h2>
+      <p class="lede">When prices move this fast, parents need a clear estimate before signing a contract—especially with unpredictable schedules or a single income. Use the free calculator to ground decisions in your ZIP and care type.</p>
+      <p><a class="btn btn--primary" href="calculator.html">Run your estimate</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© CalCare. Sources cited above; figures summarized for families.</p>
+    <p><a href="calculator.html">Calculator</a></p>
+  </footer>
+
+  <div class="chatbot">
+    <div class="chatbot__panel" id="chat-panel" role="dialog" aria-label="CalCare help chat">
+      <div class="chatbot__header">
+        <strong>Ask CalCare</strong>
+        <button type="button" class="icon-btn" id="chat-close" aria-label="Close chat">Close</button>
+      </div>
+      <div class="chatbot__messages" id="chat-messages"></div>
+      <form class="chatbot__form" id="chat-form">
+        <label class="sr-only" for="chat-input">Your question</label>
+        <input id="chat-input" name="q" autocomplete="off" placeholder="Ask about market costs" />
+        <button class="btn btn--primary" type="submit">Send</button>
+      </form>
+    </div>
+    <button type="button" class="chatbot__toggle" id="chat-toggle" aria-expanded="false" aria-controls="chat-panel">Chat</button>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

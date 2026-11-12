@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>FAQ &amp; Contact — CalCare</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function () {
+      const t = localStorage.getItem("calcare-theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html">Cal<span>Care</span></a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="compare.html">Compare</a>
+        <a href="savings.html">Savings &amp; Assistance</a>
+        <a href="market.html">Market</a>
+        <a href="faq.html" aria-current="page">FAQ &amp; Contact</a>
+        <a href="team.html">Team</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-intro">
+      <h1>FAQ &amp; contact</h1>
+      <p>Straight answers about estimates, privacy, and how CalCare stays free.</p>
+    </header>
+
+    <section class="section">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Are these prices exact?</summary>
+          <p>No. Every figure is an estimate based on national baselines, a ZIP regional multiplier, care type, ages, and hours. Always confirm with providers and a tax professional.</p>
+        </details>
+        <details>
+          <summary>Is the calculator free?</summary>
+          <p>Yes. The basic calculator is always free. There are no subscriptions. We plan revenue from provider partnerships, donations, and possibly ads.</p>
+        </details>
+        <details>
+          <summary>What is the HHS affordability index?</summary>
+          <p>The U.S. Department of Health and Human Services has used 7% of household income as a benchmark for affordable childcare. CalCare shows your estimated out-of-pocket cost as a share of income against that benchmark.</p>
+        </details>
+        <details>
+          <summary>How do tax savings estimates work?</summary>
+          <p>We model Dependent Care FSA savings with a simplified marginal rate and the Child &amp; Dependent Care Tax Credit with simplified income-based percentages and expense caps. Real returns depend on filing status and other factors.</p>
+        </details>
+        <details>
+          <summary>What data do you collect?</summary>
+          <p>We collect only what’s needed to estimate costs. Calculator inputs stay in your browser unless you submit a contact request. See the privacy note below.</p>
+        </details>
+        <details>
+          <summary>Who are your partners?</summary>
+          <p>We’re building relationships with organizations such as FIRST 5 Santa Clara County and Choices for Children, plus childcare facilities that want to reach informed parents.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Contact / request</h2>
+      <p class="lede">Ask a question, request a partnership conversation, or tell us what would help your family.</p>
+      <form class="form-panel" id="contact-form" style="max-width:36rem">
+        <div class="field">
+          <label for="contact-name">Name</label>
+          <input id="contact-name" name="name" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="contact-email">Email</label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" required placeholder="I’m looking for help estimating costs in my area…"></textarea>
+        </div>
+        <button class="btn btn--primary" type="submit">Send request</button>
+        <p class="hint" id="contact-status" style="margin-top:1rem"></p>
+      </form>
+      <p class="privacy-note"><strong>Privacy note:</strong> CalCare collects only what’s needed to estimate costs or respond to your request. We do not sell household data. Demo contact submissions are stored only in this browser session’s UI—not on a server.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© CalCare. Estimates only—not tax, legal, or financial advice.</p>
+    <p><a href="team.html">Meet the team</a></p>
+  </footer>
+
+  <div class="chatbot">
+    <div class="chatbot__panel" id="chat-panel" role="dialog" aria-label="CalCare help chat">
+      <div class="chatbot__header">
+        <strong>Ask CalCare</strong>
+        <button type="button" class="icon-btn" id="chat-close" aria-label="Close chat">Close</button>
+      </div>
+      <div class="chatbot__messages" id="chat-messages"></div>
+      <form class="chatbot__form" id="chat-form">
+        <label class="sr-only" for="chat-input">Your question</label>
+        <input id="chat-input" name="q" autocomplete="off" placeholder="Ask a quick question" />
+        <button class="btn btn--primary" type="submit">Send</button>
+      </form>
+    </div>
+    <button type="button" class="chatbot__toggle" id="chat-toggle" aria-expanded="false" aria-controls="chat-panel">Chat</button>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
