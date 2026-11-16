@@ -7,25 +7,24 @@ Static multi-page site (HTML / CSS / JS). No build step.
 ## Run locally
 
 ```bash
-cd /home/ubuntu/calcare
-python3 -m http.server 8080 --bind 127.0.0.1
+npx serve -l 8080 .
 ```
 
-Open [http://127.0.0.1:8080](http://127.0.0.1:8080).
+Open [http://localhost:8080](http://localhost:8080).
 
-Any static file server works. The site is publishable as static hosting.
+Links use clean URLs (`/compare`, not `/compare.html`), so the server must map `/compare` to `compare.html`. `serve`, GitHub Pages, and Netlify do this by default; on Vercel set `"cleanUrls": true` in `vercel.json`. `python -m http.server` does not, so links between pages will 404 there.
 
 ## Pages
 
-| Page | File |
-|------|------|
-| Home | `index.html` |
-| Calculator | `calculator.html` |
-| Compare | `compare.html` |
-| Savings & Assistance | `savings.html` |
-| Market | `market.html` |
-| FAQ & Contact | `faq.html` |
-| Team | `team.html` |
+| Page | URL | File |
+|------|-----|------|
+| Home | `/` | `index.html` |
+| Calculator | `/calculator` | `calculator.html` |
+| Compare | `/compare` | `compare.html` |
+| Savings & Assistance | `/savings` | `savings.html` |
+| Market | `/market` | `market.html` |
+| FAQ & Contact | `/faq` | `faq.html` |
+| Team | `/team` | `team.html` |
 
 ## Cost model (assumptions)
 

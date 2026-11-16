@@ -62,7 +62,7 @@
           </tbody>
         </table>
       </div>
-      <p class="privacy-note">Tax savings vary by filing status and whether you use an FSA. Run the full <a href="calculator.html">Calculator</a> for out-of-pocket detail.</p>
+      <p class="privacy-note">Tax savings vary by filing status and whether you use an FSA. Run the full <a href="calculator">Calculator</a> for out-of-pocket detail.</p>
     `;
   });
 })();

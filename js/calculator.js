@@ -307,7 +307,7 @@
         <li><a href="https://childcare.gov/" rel="noopener noreferrer" target="_blank">ChildCare.gov</a></li>
         <li><a href="https://www.first5kids.org/" rel="noopener noreferrer" target="_blank">FIRST 5 Santa Clara County</a></li>
         <li><a href="https://www.choicesforchildren.org/" rel="noopener noreferrer" target="_blank">Choices for Children</a></li>
-        <li><a href="savings.html">More on Savings &amp; Assistance</a></li>
+        <li><a href="savings">More on Savings &amp; Assistance</a></li>
       </ul>
     `;
     resultsEl.dataset.ready = "1";
