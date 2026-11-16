@@ -13,10 +13,15 @@
     const schedule = form.schedule.value;
     const hours = form.hours.value;
 
+    const err = document.getElementById("zip-error");
     if (!/^\d{5}(-\d{4})?$/.test(zip)) {
+      form.zip.setAttribute("aria-invalid", "true");
+      if (err) err.textContent = "Enter a 5-digit ZIP code.";
       form.zip.focus();
       return;
     }
+    form.zip.removeAttribute("aria-invalid");
+    if (err) err.textContent = "";
 
     const est = compute({
       zip,

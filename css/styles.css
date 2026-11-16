@@ -569,6 +569,16 @@ main {
     position: sticky;
     top: calc(var(--header-h) + 1rem);
   }
+
+  .calc-layout--compare {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: stretch;
+  }
+
+  .calc-layout--compare .field-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 }
 
 .field {
@@ -586,6 +596,10 @@ main {
 .field .hint {
   color: var(--text-muted);
   font-size: var(--text-xs);
+}
+
+.field .hint:empty {
+  display: none;
 }
 
 .field input,
@@ -816,6 +830,10 @@ main {
   border-collapse: collapse;
   min-width: 640px;
   font-variant-numeric: tabular-nums;
+}
+
+.results-panel .compare-table {
+  min-width: 0;
 }
 
 .compare-table th,

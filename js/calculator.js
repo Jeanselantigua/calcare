@@ -173,6 +173,8 @@
     };
   }
 
+  window.CalCareModel = { compute, CARE_TYPES, AGE_BANDS, money, zipMultiplier, FEE_PER_CHILD_YEAR, INCOME_MIDPOINTS };
+
   // --- UI wiring ---
   const form = document.getElementById("calc-form");
   if (!form) return;
@@ -335,7 +337,4 @@
       heading.focus();
     }
   });
-
-  // Compare page helper
-  window.CalCareModel = { compute, CARE_TYPES, AGE_BANDS, money, zipMultiplier, FEE_PER_CHILD_YEAR, INCOME_MIDPOINTS };
 })();
